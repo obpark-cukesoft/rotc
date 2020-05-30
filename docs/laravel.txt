@@ -1,0 +1,32 @@
+artisan clear-compiled
+artisan ide-helper:generate
+"File > Invalidate caches..." and restart ide.
+
+php artisan cache:clear
+php artisan route:cache
+php artisan config:clear
+php artisan view:clear
+
+artisan make:auth
+artisan make:middleware AuthenticateWithLevel
+
+artisan storage:link
+
+artisan make:controller CodeController
+artisan make:model Code
+
+artisan make:controller MemberController
+artisan make:model Member
+artisan make:request MemberRequest
+artisan make:model MemberProfile
+
+artisan make:model File
+
+artisan make:controller PostController
+artisan make:model Post
+artisan make:model Board
+artisan make:resource Post
+#artisan make:request Post
+
+artisan make:resource PostCollection
+

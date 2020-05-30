@@ -1,0 +1,37 @@
+** TODO
+* 개발 호스트 세팅
+* github setting
+* DB에서 GPS정보 24시에 초기화
+* push 메시지 관리
+  * 공지사항 게시판 push message 선택 발송
+--
+* 코드관리 추가
+* 회원관리
+  * validation 체크
+  * 파일저장: 파일을 저장하고 id를 return 회원을 insert 또는 update 할 때 file_id를 저장해야함
+
+--
+* login api 연동
+* passport
+  * refresh token 내용 확인
+  * users 테이블의 status 상태에 따라 auth:api 결과 조정하기
+    * 미들웨어를 두개(배열로)를 쓰라는 얘기가 있음
+    * 토큰발행시에도 status 체크
+       if ($api) {
+            $user = Auth::guard('api')->user(['api_token'=>$request->api_token]);
+            if ($level <= $user->level ) {
+                auth()->login($user);
+                return $next($request);
+            }
+        }
+
+* cache 서버 설치 및 적용
+* push message -> 상품, 사업장
+* iphone 버전 -> 모바일 web으로
+----
+
+** DONE
+* 관리자 미들웨어
+* 개발 DB
+* 공지사항 게시판
+  * 리스트, 뷰화면 api
